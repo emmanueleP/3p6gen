@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richiedi una Chiave - 3.6 Gen</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="../../index.html" class="logo">3.6 Gen</a>
+            <div class="nav-links">
+                <a href="../../#hemodos">Hemodos</a>
+                <a href="../../#abe">Abe Suite</a>
+                <a href="../../#glik">Glik</a>
+                <a href="../app.html">App</a>
+                <a href="../download.html">Download</a>
+                <a href="richiedi.html" class="active">Richiedi Codice</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="app-container">
+            <h1 class="page-title">Richiedi una Chiave</h1>
+
+            <div class="form-info">
+                <p>Compila il form sottostante per richiedere una chiave di prodotto che ti permette di accedere alle funzionalità premium delle app. Riceverai una risposta entro 24-48 ore lavorative.</p>
+            </div>
+
+            <div class="donation-section">
+                <h2>Supporta lo Sviluppo</h2>
+                <div class="donation-info">
+                    <p>Se desideri supportare lo sviluppo delle app, puoi fare una donazione tramite Ko-fi. La donazione è completamente opzionale e non influisce sull'uso gratuito delle app.</p>
+                </div>
+                <a href="https://ko-fi.com/emmanueleP" target="_blank" class="kofi-button">
+                    <i class="fas fa-coffee"></i>
+                    Supporta su Ko-fi
+                </a>
+            </div>
+
+            <div class="support-section">
+                <form class="request-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+                    <div class="form-group">
+                        <label for="software">Software <span class="required">*</span></label>
+                        <select id="software" name="software" class="form-control" required>
+                            <option value="">Seleziona il software</option>
+                            <option value="hemodos">Hemodos</option>
+                            <option value="abe">Gestionale ABE</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Nome e Cognome <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Note aggiuntive</label>
+                        <textarea id="message" name="message" class="form-control" rows="4"></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn primary">Invia Richiesta</button>
+                        <a href="licenze.html" class="btn secondary">Leggi le Licenze</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Contatti</h3>
+                <a href="https://github.com/emmanueleP" class="social-link">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Emmanuele Pani. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

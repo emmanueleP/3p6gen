@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentazione - Hemodos</title>
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .docs-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-button {
+            padding: 0.8rem 1.5rem;
+            background: var(--bg-secondary);
+            border: none;
+            color: var(--text-primary);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tab-button.active {
+            background: var(--accent);
+            color: var(--bg-primary);
+        }
+
+        .tab-content {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding-left: 1.5rem;
+        }
+
+        .feature-list li {
+            position: relative;
+            margin-bottom: 0.8rem;
+        }
+
+        .feature-list li::before {
+            content: "•";
+            color: var(--accent);
+            position: absolute;
+            left: -1.5rem;
+        }
+
+        .step-list {
+            list-style: none;
+            padding-left: 2rem;
+            counter-reset: step-counter;
+        }
+
+        .step-list li {
+            position: relative;
+            margin-bottom: 1rem;
+            counter-increment: step-counter;
+        }
+
+        .step-list li::before {
+            content: counter(step-counter);
+            color: var(--bg-primary);
+            background: var(--accent);
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            position: absolute;
+            left: -2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body class="docs-page">
+    <nav>
+        <div class="nav-container">
+            <a href="../../../index.html" class="logo">3.6 Gen</a>
+            <div class="nav-links">
+                <a href="../../../#hemodos">Hemodos</a>
+                <a href="../../../#abe">Abe Suite</a>
+                <a href="../../../#glik">Glik</a>
+                <a href="../../download.html">Download</a>
+                <a href="../../pagnucom/supporto.html">Supporto</a>
+                <a href="../../pagnucom/richiedi.html">Richiedi Codice</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="app-container">
+            <div class="docs-header">
+                <h1 class="page-title">Documentazione Hemodos</h1>
+                <div class="docs-meta">
+                    <span class="version">
+                        <i class="fas fa-code-branch"></i>
+                        <span id="current-version">Caricamento...</span>
+                    </span>
+                    <div class="cta-buttons">
+                        <a href="../../download.html#hemodos" class="btn primary">
+                            <i class="fas fa-download"></i>
+                            Download
+                        </a>
+                        <a href="../changelog/changelog.html" class="btn secondary">Changelog</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="docs-container">
+                <aside class="docs-sidebar">
+                    <nav class="docs-nav">
+                        <div class="nav-section">
+                            <h3>Guida Rapida</h3>
+                            <ul>
+                                <li><a href="#introduzione">Introduzione</a></li>
+                                <li><a href="#installazione">Installazione</a></li>
+                                <li><a href="#primi-passi">Primi Passi</a></li>
+                            </ul>
+                        </div>
+                        <div class="nav-section">
+                            <h3>Funzionalità</h3>
+                            <ul>
+                                <li><a href="#gestione-donatori">Gestione Donatori</a></li>
+                                <li><a href="#calendario">Calendario Donazioni</a></li>
+                                <li><a href="#cloud">Sincronizzazione Cloud</a></li>
+                            </ul>
+                        </div>
+                        <div class="nav-section">
+                            <h3>Avanzate</h3>
+                            <ul>
+                                <li><a href="#configurazione">Configurazione</a></li>
+                                <li><a href="#backup">Backup e Ripristino</a></li>
+                                <li><a href="#troubleshooting">Risoluzione Problemi</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </aside>
+
+                <div class="docs-content">
+                    <section id="introduzione">
+                        <h2>Introduzione</h2>
+                        <p>Hemodos è un software completo per la gestione delle donazioni di sangue, progettato per semplificare il processo di prenotazione e monitoraggio delle donazioni.</p>
+                        
+                        <h3>Caratteristiche Principali</h3>
+                        <ul class="feature-list">
+                            <li>Sistema di gestione delle prime donazioni</li>
+                            <li>Tracciamento dello stato delle donazioni</li>
+                            <li>Statistiche dettagliate</li>
+                            <li>Esportazione dati in formato .docx o PDF</li>
+                            <li>Sincronizzazione cloud (OneDrive/Google Drive)</li>
+                            <li>Backup automatico dei dati</li>
+                            <li>Gestione multi-anno con archivio storico</li>
+                        </ul>
+                    </section>
+
+                    <section id="installazione">
+                        <h2>Installazione</h2>
+                        <p>Per installare Hemodos, seguire questi passaggi:</p>
+                        <ol class="step-list">
+                            <li>Scarica il file di installazione dal sito ufficiale</li>
+                            <li>Esegui il file di installazione</li>
+                            <li>Segui le istruzioni sullo schermo per completare l'installazione</li>
+                        </ol>
+                    </section>
+
+                    <section id="primi-passi">
+                        <h2>Primi Passi</h2>
+                        <p>Dopo aver installato Hemodos, ecco alcuni passaggi per iniziare a utilizzarlo:</p>
+                        <ol class="step-list">
+                            <li>Accedi al software</li>
+                            <li>Aggiungi un nuovo donatore</li>
+                            <li>Pianifica una donazione</li>
+                            <li>Monitora lo stato delle donazioni</li>
+                        </ol>
+                    </section>
+
+                    <section id="gestione-donatori">
+                        <h2>Gestione Donatori</h2>
+                        <h3>Tabella Donatori</h3>
+                        <p>La tabella mostra le seguenti informazioni per ogni donatore:</p>
+                        <ul class="feature-list">
+                            <li><b>Nome</b>: Nome del donatore</li>
+                            <li><b>Cognome</b>: Cognome del donatore</li>
+                            <li><b>Prima Donazione</b>: Indica se è la prima donazione del donatore (disabilitato di default dopo le 10:00)</li>
+                            <li><b>Stato</b>: Stato della donazione, che permette di avere un feedback all'interno delle statistiche (Non effettuata/Sì/Annullata/Rimandata)</li>
+                        </ul>
+                    </section>
+
+                    <section id="calendario">
+                        <h2>Calendario Donazioni</h2>
+                        <h3>Visualizzazione</h3>
+                        <ul class="feature-list">
+                            <li>Le date con donazioni programmate sono evidenziate in verde lime</li>
+                            <li>Cliccando su una data si possono visualizzare/modificare le prenotazioni</li>
+                            <li>Menu contestuale disponibile con clic destro sulla data (in sviluppo)</li>
+                        </ul>
+
+                        <h3>Funzionalità del menu:</h3>
+                        <ul class="feature-list">
+                            <li><b>Aggiungi Orario</b>: Inserisce un nuovo slot orario per le donazioni</li>
+                            <li><b>Salva</b>: Salva le modifiche correnti</li>
+                            <li><b>Elimina</b>: Elimina l'orario selezionato</li>
+                            <li><b>Esporta in DOCX</b>: Esporta le prenotazioni del giorno in formato Word</li>
+                            <li><b>Stampa</b>: Stampa le prenotazioni del giorno selezionato</li>
+                        </ul>
+                    </section>
+
+                    <section id="cloud">
+                        <h2>Sincronizzazione Cloud</h2>
+                        <h3>Backup e Ripristino</h3>
+                        <ul class="feature-list">
+                            <li>Permette di scegliere la directory di salvataggio dei file .db principali (Locale/OneDrive/Google Drive)</li>
+                            <li>Permette di scegliere il salvataggio automatico dell'app e la frequenza</li>
+                        </ul>
+                    </section>
+
+                    <section id="configurazione">
+                        <h2>Configurazione</h2>
+                        <h3>Generali</h3>
+                        <ul class="feature-list">
+                            <li>Gestione date di donazione per anno</li>
+                            <li>Configurazione orari disponibili</li>
+                            <li>Personalizzazione intervalli (in sviluppo)</li>
+                        </ul>
+                        <h3>Gestione Anni</h3>
+                        <ul class="feature-list">
+                            <li>Permette di gestire gli anni e creare l'archivio (struttura) per ogni anno fino al 2099</li>
+                            <li>Permette di eliminare l'archivio di un anno selezionato</li>
+                        </ul>
+                        <h3>Aspetto</h3>
+                        <ul class="feature-list">
+                            <li>Permette di scegliere il tema (Chiaro/Scuro)</li>
+                        </ul>
+                        <h3>Logo</h3>
+                        <ul class="feature-list">
+                            <li>Permette di scegliere l'intestazione che si visualizza nel .docx o pdf esportato.</li>
+                        </ul>
+                    </section>
+
+                    <section id="backup">
+                        <h2>Backup e Ripristino</h2>
+                        <h3>Backup</h3>
+                        <ul class="feature-list">
+                            <li>Permette di eseguire un backup dei dati</li>
+                        </ul>
+                        <h3>Ripristino</h3>
+                        <ul class="feature-list">
+                            <li>Permette di ripristinare i dati da un backup</li>
+                        </ul>
+                    </section>
+
+                    <section id="troubleshooting">
+                        <h2>Risoluzione Problemi</h2>
+                        <h3>Risoluzione Problemi</h3>
+                        <ul class="feature-list">
+                            <li>Permette di risolvere i problemi che si possono verificare durante l'uso del software</li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Contatti</h3>
+                <a href="https://github.com/emmanueleP" class="social-link">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Emmanuele Pani. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        async function fetchCurrentVersion() {
+            try {
+                const response = await fetch('https://api.github.com/repos/emmanueleP/hemodos/releases/latest');
+                const data = await response.json();
+                document.getElementById('current-version').textContent = data.tag_name;
+            } catch (error) {
+                console.error('Errore nel recupero della versione:', error);
+                document.getElementById('current-version').textContent = 'Non disponibile';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchCurrentVersion);
+    </script>
+</body>
+</html> 

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changelog - Gestionale Abe</title>
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        async function fetchChangelog() {
+            const repo = 'emmanueleP/abe';
+            const changelogContainer = document.getElementById('changelog-content');
+            
+            try {
+                const response = await fetch(`https://api.github.com/repos/${repo}/releases`);
+                const releases = await response.json();
+                
+                let changelogHtml = '';
+                
+                for (const release of releases) {
+                    const date = new Date(release.published_at).toLocaleDateString('it-IT');
+                    const version = release.tag_name;
+                    const body = release.body.replace(/\r\n/g, '\n').split('\n').filter(line => line.trim());
+                    
+                    changelogHtml += `
+                        <div class="version">
+                            <h2>
+                                <span class="version-number">${version}</span>
+                                <span class="date">${date}</span>
+                            </h2>
+                            <ul>
+                                ${body.map(line => `<li>${line.replace(/^[*-] /, '')}</li>`).join('')}
+                            </ul>
+                        </div>
+                    `;
+                }
+                
+                changelogContainer.innerHTML = changelogHtml;
+                
+            } catch (error) {
+                console.error('Errore nel recupero del changelog:', error);
+                changelogContainer.innerHTML = `
+                    <div class="error-message">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <p>Si è verificato un errore nel caricamento del changelog.</p>
+                    </div>
+                `;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchChangelog);
+    </script>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="../../../index.html" class="logo">3.6 Gen</a>
+            <div class="nav-links">
+                <a href="../../../#hemodos">Hemodos</a>
+                <a href="../../../#abe">Abe Suite</a>
+                <a href="../../../#glik">Glik</a>
+                <a href="../../app.html">App</a>
+                <a href="../../download.html">Download</a>
+                <a href="../../pagnucom/richiedi.html">Richiedi Codice</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="app-container">
+            <h1 class="page-title">Changelog Gestionale Abe</h1>
+            
+            <div class="changelog-container">
+                <div id="changelog-content">
+                    <div class="loading">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <p>Caricamento changelog...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Contatti</h3>
+                <a href="https://github.com/emmanueleP" class="social-link">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Emmanuele Pani. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

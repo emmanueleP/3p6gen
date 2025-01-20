@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download - 3.6 Gen</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        async function fetchLatestReleases() {
+            const repos = {
+                hemodos: 'emmanueleP/hemodos',
+                abe: 'emmanueleP/abe',
+                glik: 'emmanueleP/glik'
+            };
+
+            for (const [app, repo] of Object.entries(repos)) {
+                try {
+                    const response = await fetch(`https://api.github.com/repos/${repo}/releases/latest`);
+                    const data = await response.json();
+                    
+                    // Aggiorna il tag versione
+                    document.querySelector(`#${app}-version`).textContent = data.tag_name;
+                    
+                    // Trova l'asset .exe
+                    const exeAsset = data.assets.find(asset => asset.name.endsWith('.exe'));
+                    if (exeAsset) {
+                        document.querySelector(`#${app}-download`).href = exeAsset.browser_download_url;
+                    }
+                    
+                } catch (error) {
+                    console.error(`Errore nel recupero della release per ${app}:`, error);
+                }
+            }
+        }
+
+        // Carica le informazioni al caricamento della pagina
+        document.addEventListener('DOMContentLoaded', fetchLatestReleases);
+    </script>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="../index.html" class="logo">3.6 Gen</a>
+            <div class="nav-links">
+                <a href="../#hemodos">Hemodos</a>
+                <a href="../#abe">Abe Suite</a>
+                <a href="../#glik">Glik</a>
+                <a href="download.html" class="active">Download</a>
+                <a href="pagnucom/richiedi.html">Richiedi Codice</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="app-container">
+            <h1 class="page-title">Download</h1>
+
+            <div class="downloads-grid">
+                <div class="download-card">
+                    <div class="app-icon">🩸</div>
+                    <h2>Hemodos</h2>
+                    <p class="app-description">Gestione degli appuntamenti di donazione di sangue</p>
+                    <div class="version-tag">
+                        <i class="fas fa-code-branch"></i>
+                        <span id="hemodos-version">Caricamento...</span>
+                    </div>
+                    <div class="download-actions">
+                        <a href="#" id="hemodos-download" class="btn primary">
+                            <i class="fas fa-download"></i>
+                            Download
+                        </a>
+                        <a href="hemodos/changelog/changelog.html" class="btn secondary">Changelog</a>
+                    </div>
+                </div>
+
+                <div class="download-card">
+                    <div class="app-icon">🏢</div>
+                    <h2>Gestionale Abe</h2>
+                    <p class="app-description">Suite completa per la gestione di segreteria Avis</p>
+                    <div class="version-tag">
+                        <i class="fas fa-code-branch"></i>
+                        <span id="abe-version">Caricamento...</span>
+                    </div>
+                    <div class="download-actions">
+                        <a href="#" id="abe-download" class="btn primary">
+                            <i class="fas fa-download"></i>
+                            Download
+                        </a>
+                        <a href="abe/changelog/changelog.html" class="btn secondary">Changelog</a>
+                    </div>
+                </div>
+
+                <div class="download-card">
+                    <div class="app-icon">🩺</div>
+                    <h2>Glik</h2>
+                    <p class="app-description">Visualizzatore desktop per Nightscout</p>
+                    <div class="version-tag">
+                        <i class="fas fa-code-branch"></i>
+                        <span id="glik-version">Caricamento...</span>
+                    </div>
+                    <div class="download-actions">
+                        <a href="#" id="glik-download" class="btn primary">
+                            <i class="fas fa-download"></i>
+                            Download
+                        </a>
+                        <a href="glik/changelog/changelog.html" class="btn secondary">Changelog</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Contatti</h3>
+                <a href="https://github.com/emmanueleP" class="social-link">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Emmanuele Pani. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentazione - Glik</title>
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="docs-page">
+    <nav>
+        <div class="nav-container">
+            <a href="../../../index.html" class="logo">3.6 Gen</a>
+            <div class="nav-links">
+                <a href="../../../#hemodos">Hemodos</a>
+                <a href="../../../#abe">Abe Suite</a>
+                <a href="../../../#glik">Glik</a>
+                <a href="../../download.html">Download</a>
+                <a href="../../pagnucom/richiedi.html">Richiedi Codice</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="app-container">
+            <div class="docs-header">
+                <h1 class="page-title">Documentazione Glik</h1>
+                <div class="docs-meta">
+                    <span class="version">
+                        <i class="fas fa-code-branch"></i>
+                        <span id="current-version">Caricamento...</span>
+                    </span>
+                    <div class="cta-buttons">
+                        <a href="../../download.html#glik" class="btn primary">
+                            <i class="fas fa-download"></i>
+                            Download
+                        </a>
+                        <a href="../changelog/changelog.html" class="btn secondary">Changelog</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="docs-container">
+                <aside class="docs-sidebar">
+                    <nav class="docs-nav">
+                        <div class="nav-section">
+                            <h3>Guida Rapida</h3>
+                            <ul>
+                                <li><a href="#introduzione">Introduzione</a></li>
+                                <li><a href="#installazione">Installazione</a></li>
+                                <li><a href="#primi-passi">Primi Passi</a></li>
+                            </ul>
+                        </div>
+                        <div class="nav-section">
+                            <h3>Funzionalità</h3>
+                            <ul>
+                                <li><a href="#monitoraggio">Monitoraggio</a></li>
+                                <li><a href="#notifiche">Notifiche</a></li>
+                                <li><a href="#statistiche">Statistiche</a></li>
+                            </ul>
+                        </div>
+                        <div class="nav-section">
+                            <h3>Avanzate</h3>
+                            <ul>
+                                <li><a href="#api">Configurazione API</a></li>
+                                <li><a href="#personalizzazione">Personalizzazione</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </aside>
+
+                <div class="docs-content">
+                    <section id="introduzione">
+                        <h2>Introduzione</h2>
+                        <p>Glik è un visualizzatore desktop per il monitoraggio della glicemia tramite Nightscout, che permette di tenere sotto controllo i valori glicemici direttamente dal computer.</p>
+                        
+                        <h3>Caratteristiche Principali</h3>
+                        <ul class="feature-list">
+                            <li>Monitoraggio in tempo reale dei valori glicemici</li>
+                            <li>Notifiche desktop personalizzabili</li>
+                            <li>Visualizzazione grafica dei trend</li>
+                            <li>Integrazione con Nightscout</li>
+                            <li>Avvio automatico con Windows</li>
+                            <li>Interfaccia minimale nella system tray</li>
+                        </ul>
+                    </section>
+
+                    <section id="installazione">
+                        <h2>Installazione</h2>
+                        <h3>Requisiti di Sistema</h3>
+                        <ul class="feature-list">
+                            <li>Windows 10/11 (64-bit)</li>
+                            <li>100MB spazio su disco</li>
+                            <li>2GB RAM</li>
+                            <li>Connessione Internet</li>
+                            <li>Sito Nightscout configurato</li>
+                        </ul>
+                    </section>
+
+                    <section id="monitoraggio">
+                        <h2>Monitoraggio</h2>
+                        <p>Funzionalità di monitoraggio in tempo reale dei valori glicemici.</p>
+                        <!-- Dettagli specifici del monitoraggio -->
+                    </section>
+
+                    <section id="notifiche">
+                        <h2>Notifiche</h2>
+                        <p>Funzionalità di notifiche per i valori glicemici.</p>
+                        <!-- Dettagli specifici delle notifiche -->
+                    </section>
+
+                    <section id="statistiche">
+                        <h2>Statistiche</h2>
+                        <p>Funzionalità di analisi statistica dei dati glicemici.</p>
+                        <!-- Dettagli specifici delle statistiche -->
+                    </section>
+
+                    <section id="api">
+                        <h2>Configurazione API</h2>
+                        <p>Funzionalità di configurazione dell'API per la comunicazione con Nightscout.</p>
+                        <!-- Dettagli specifici dell'API -->
+                    </section>
+
+                    <section id="personalizzazione">
+                        <h2>Personalizzazione</h2>
+                        <p>Funzionalità di personalizzazione dell'applicazione.</p>
+                        <!-- Dettagli specifici della personalizzazione -->
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Contatti</h3>
+                <a href="https://github.com/emmanueleP" class="social-link">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Emmanuele Pani. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        async function fetchCurrentVersion() {
+            try {
+                const response = await fetch('https://api.github.com/repos/emmanueleP/glik/releases/latest');
+                const data = await response.json();
+                document.getElementById('current-version').textContent = data.tag_name;
+            } catch (error) {
+                console.error('Errore nel recupero della versione:', error);
+                document.getElementById('current-version').textContent = 'Non disponibile';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchCurrentVersion);
+    </script>
+</body>
+</html>
