@@ -1,3 +1,4 @@
 # 3.6 Gen
 
-Website in development
+Home of all of my projects.
+https://emmanuelep.github.io/3p6gen/
