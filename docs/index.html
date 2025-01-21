@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+    <title>Home</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -24,99 +24,110 @@
 
     <header>
         <div class="hero">
-            <h1>Benvenuto in 3.6 Gen</h1>
+            <h1>3.6 Gen</h1>
             <p class="app-description">Software sviluppato da Emmanuele Pani.</p>
         </div>
     </header>
 
     <main class="main-content">
-        <section id="glik" class="app-section">
-            <div class="app-container">
-                <div class="app-info">
-                    <h2>🩺 Glik</h2>
-                    <p class="app-description">Visualizzatore desktop per il monitoraggio della glicemia tramite Nightscout</p>
-                    <div class="features">
-                        <div class="feature">
-                            <i class="fas fa-sync"></i>
-                            <span>Aggiornamento automatico dei dati</span>
+        <div class="app-grid">
+            <section id="glik" class="app-section">
+                <div class="app-container">
+                    <div class="app-info">
+                        <div class="app-header">
+                            <img src="images/logo_glik.png" alt="Glik Logo" class="app-logo">
+                            <h2>Glik</h2>
                         </div>
-                        <div class="feature">
-                            <i class="fas fa-bell"></i>
-                            <span>Notifiche nella system tray</span>
+                        <p class="app-description">Visualizzatore desktop per il monitoraggio della glicemia tramite Nightscout</p>
+                        <div class="features">
+                            <div class="feature">
+                                <i class="fas fa-sync"></i>
+                                <span>Aggiornamento automatico dei dati</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-bell"></i>
+                                <span>Notifiche nella system tray</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-lock"></i>
+                                <span>Cifratura delle API</span>
+                            </div>
                         </div>
-                        <div class="feature">
-                            <i class="fas fa-lock"></i>
-                            <span>Cifratura delle API</span>
+                        <div class="cta-buttons">
+                            <a href="pages/download.html#glik" class="btn primary">Download</a>
+                            <a href="pages/glik/docs/documentazione.html" class="btn secondary">Documentazione</a>
+                            <a href="pages/glik/changelog/changelog.html" class="btn secondary">Changelog</a>
                         </div>
-                    </div>
-                    <div class="cta-buttons">
-                        <a href="https://github.com/emmanueleP/glik/releases" class="btn primary">Download</a>
-                        <a href="pages/glik/docs/documentazione.html" class="btn secondary">Documentazione</a>
-                        <a href="pages/glik/changelog/changelog.html" class="btn secondary">Changelog</a>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="hemodos" class="app-section">
-            <div class="app-container">
-                <div class="app-info">
-                    <h2>🩸 Hemodos</h2>
-                    <p class="app-description">Gestione degli appuntamenti di donazione di sangue</p>
-                    <div class="features">
-                        <div class="feature">
-                            <i class="fas fa-calendar-alt"></i>
-                            <span>Gestione calendario donazioni</span>
+            <section id="hemodos" class="app-section">
+                <div class="app-container">
+                    <div class="app-info">
+                        <div class="app-header">
+                            <img src="images/logo_hemodos.png" alt="Hemodos Logo" class="app-logo">
+                            <h2>Hemodos</h2>
                         </div>
-                        <div class="feature">
-                            <i class="fas fa-clock"></i>
-                            <span>Prenotazioni per fasce orarie</span>
+                        <p class="app-description">Gestione degli appuntamenti di donazione di sangue</p>
+                        <div class="features">
+                            <div class="feature">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Gestione calendario donazioni</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-clock"></i>
+                                <span>Prenotazioni per fasce orarie</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-cloud"></i>
+                                <span>Supporto cloud storage (OneDrive e Google Drive)</span>
+                            </div>
                         </div>
-                        <div class="feature">
-                            <i class="fas fa-cloud"></i>
-                            <span>Supporto cloud storage (OneDrive e Google Drive)</span>
+                        <div class="cta-buttons">
+                            <a href="pages/download.html#hemodos" class="btn primary">Download</a>
+                            <a href="pages/hemodos/docs/documentazione.html" class="btn secondary">Documentazione</a>
+                            <a href="pages/hemodos/changelog/changelog.html" class="btn secondary">Changelog</a>
                         </div>
-                    </div>
-                    <div class="cta-buttons">
-                        <a href="https://github.com/emmanueleP/hemodos/releases" class="btn primary">Download</a>
-                        <a href="pages/hemodos/docs/documentazione.html" class="btn secondary">Documentazione</a>
-                        <a href="pages/hemodos/changelog/changelog.html" class="btn secondary">Changelog</a>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="abe" class="app-section">
-            <div class="app-container">
-                <div class="app-info">
-                    <h2>🏢 Gestionale Abe</h2>
-                    <p class="app-description">Suite completa per la gestione di segreteria Avis</p>
-                    <div class="app-modules">
-                        <div class="module">
-                            <h3>📝 Ordina</h3>
-                            <p>Protocollazione automatica documenti</p>
+            <section id="abe" class="app-section">
+                <div class="app-container">
+                    <div class="app-info">
+                        <div class="app-header">
+                            <img src="images/logo_abe.png" alt="Abe Logo" class="app-logo">
+                            <h2>Gestionale Abe</h2>
                         </div>
-                        <div class="module">
-                            <h3>👥 aViS66</h3>
-                            <p>Gestione Libro Soci Avis</p>
+                        <p class="app-description">Suite completa per la gestione di segreteria Avis</p>
+                        <div class="app-modules">
+                            <div class="module">
+                                <h3>📝 Ordina</h3>
+                                <p>Protocollazione automatica documenti</p>
+                            </div>
+                            <div class="module">
+                                <h3>👥 aViS66</h3>
+                                <p>Gestione Libro Soci Avis</p>
+                            </div>
+                            <div class="module">
+                                <h3>📄 PDFtoA</h3>
+                                <p>Conversione PDF/A</p>
+                            </div>
+                            <div class="module">
+                                <h3>💰 ManRev</h3>
+                                <p>Gestione Mandati e Reversali</p>
+                            </div>
                         </div>
-                        <div class="module">
-                            <h3>📄 PDFtoA</h3>
-                            <p>Conversione PDF/A</p>
+                        <div class="cta-buttons">
+                            <a href="pages/download.html#abe" class="btn primary">Download</a>
+                            <a href="pages/abe/docs/documentazione.html" class="btn secondary">Documentazione</a>
+                            <a href="pages/abe/changelog/changelog.html" class="btn secondary">Changelog</a>
                         </div>
-                        <div class="module">
-                            <h3>💰 ManRev</h3>
-                            <p>Gestione Mandati e Reversali</p>
-                        </div>
-                    </div>
-                    <div class="cta-buttons">
-                        <a href="https://github.com/emmanueleP/abe/releases" class="btn primary">Download</a>
-                        <a href="pages/abe/docs/documentazione.html" class="btn secondary">Documentazione</a>
-                        <a href="pages/abe/changelog/changelog.html" class="btn secondary">Changelog</a>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </main>
 
     <footer id="contatti">

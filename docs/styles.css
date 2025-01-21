@@ -766,8 +766,17 @@ textarea.form-control {
     transform: translateY(-5px);
 }
 
-.app-icon {
-    font-size: 3rem;
+.download-card .app-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.download-card .app-logo {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
     margin-bottom: 1rem;
 }
 
@@ -884,17 +893,22 @@ textarea.form-control {
     border-radius: 8px;
     padding: 2rem;
     margin-bottom: 3rem;
+    text-align: center;
 }
 
 .app-header {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
 }
 
-.app-header .app-icon {
-    font-size: 2.5rem;
+.app-logo {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    margin-bottom: 1rem;
 }
 
 .app-header h2 {
@@ -1267,4 +1281,46 @@ textarea.form-control {
 
 .support-buttons .btn i {
     font-size: 1.2rem;
+}
+
+/* App Grid Layout */
+.app-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    align-items: start;
+}
+
+.app-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.app-logo {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.app-section {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.app-section:hover {
+    transform: translateY(-5px);
+}
+
+.app-description {
+    margin: 1rem 0;
 } 
